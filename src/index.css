@@ -3,5 +3,8 @@
 :root {
   --font-family: 'Roboto Slab', sans-serif;
 
-  --color-bg: rgb(32, 33, 36);
+  --color-bg: #202124;
+  --color-border: #5f6368;
+  --color-text: #e2e2e3;
+  --color-icon: #e4e4e5;
 }
