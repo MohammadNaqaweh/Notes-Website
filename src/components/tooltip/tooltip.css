@@ -1,0 +1,32 @@
+.keep-notes__tooltip {
+  position: relative;
+  display: inline-block;
+  color: var(--color-icon);
+  margin: 0 0.25rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  border-radius: 50%;
+  transition: background-color,color 0.1s;
+}
+
+.keep-notes__tooltip:hover {
+  background-color: #2f3034; 
+}
+
+.keep-notes__tooltip-text {
+  position: absolute;
+  top: calc(100% + 5px);
+  transform: translateX(0);
+  background-color: #393d40;
+  color: var(--color-text);
+  padding: 4px 8px; 
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: var(--font-family);
+  white-space: nowrap;
+}

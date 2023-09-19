@@ -2,8 +2,11 @@ import React from 'react';
 import { RiMenuFill, RiSearchLine } from 'react-icons/ri';
 import { RxReload, RxGear } from 'react-icons/rx';
 import { BsViewStacked, BsGrid3X3GapFill } from 'react-icons/bs';
+
 import logo from '../../assets/logo.png';
 import channelPicture from '../../assets/channel-picture.jpg';
+
+import { Tooltip } from '../../components/index.js';
 
 import './header.css';
 
@@ -13,36 +16,36 @@ const Header = () => {
   return (
     <div className='keep-notes__header'>
       <div className='keep-notes__header-section_left'>
-        <div className='keep-notes__header-icon_container'>
+        <Tooltip text={"Main menu"}>
           <RiMenuFill size={iconSize}/>
-        </div>
+        </Tooltip>
         <img src={logo} alt="logo"/>
         <h3>Keep</h3>
       </div>
       <div className='keep-notes__header-section_searchbar'>
-        <div className='keep-notes__header-icon_container'>
+        <Tooltip text={"Serach"}>
           <RiSearchLine size={iconSize}/>
-        </div>
+        </Tooltip>
         <input placeholder='Search'/>
       </div>
       <div className='keep-notes__header-section_right'>
-        <div className='keep-notes__header-icon_container hidden-icon'>
+        <Tooltip text={"Search"}>
           <RiSearchLine size={iconSize}/>
-        </div>
-        <div className='keep-notes__header-icon_container'>
+        </Tooltip>
+        <Tooltip text={"Refresh"}>
           <RxReload size={iconSize} />
-        </div>
-        <div className='keep-notes__header-icon_container'>
+        </Tooltip>
+        <Tooltip text={"List View"}>
           <BsViewStacked size={iconSize} />
-        </div>
-        <div className='keep-notes__header-icon_container'>
+        </Tooltip>
+        <Tooltip text={"Settings"}>
           <RxGear size={iconSize} />
-        </div>
+        </Tooltip>
       </div>
       <div className='keep-notes__header-section_accountinfo'>
-        <div className='keep-notes__header-icon_container'>
+        <Tooltip text={"Google Apps"}>
           <BsGrid3X3GapFill size={iconSize} />
-        </div>
+        </Tooltip>
         <img src={channelPicture} alt='channel picture' />
       </div>
     </div>
