@@ -2,6 +2,7 @@ import React from 'react';
 import { RiMenuFill, RiSearchLine } from 'react-icons/ri';
 import { RxReload, RxGear } from 'react-icons/rx';
 import { BsViewStacked, BsGrid3X3GapFill } from 'react-icons/bs';
+import { NavLink as Link, NavLink } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 import channelPicture from '../../assets/channel-picture.jpg';
@@ -12,15 +13,17 @@ import './header.css';
 
 const iconSize = 20;
 
-const Header = () => {
+const Header = ( {isHome, pageTitle} ) => {
   return (
     <div className='keep-notes__header'>
       <div className='keep-notes__header-section_left'>
         <Tooltip text={"Main menu"}>
           <RiMenuFill size={iconSize}/>
         </Tooltip>
-        <img src={logo} alt="logo"/>
-        <h3>Keep</h3>
+        <NavLink className="keep-notes__header-navlink" to="/home">
+          {isHome && <img src={logo} alt="logo"/>}
+          <h3>{pageTitle}</h3>
+        </NavLink>
       </div>
       <div className='keep-notes__header-section_searchbar'>
         <Tooltip text={"Serach"}>
