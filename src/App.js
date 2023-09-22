@@ -1,12 +1,18 @@
 import React from 'react';
 
-import {Header} from './containers/index.js';
+import { Home } from './pages/index.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
   return (
     <div className='App'>
-      <Header />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />}/>
+          <Route path="/home" element={<Home />}/>
+        </Routes>
+      </Router>
     </div>
   )
 }
