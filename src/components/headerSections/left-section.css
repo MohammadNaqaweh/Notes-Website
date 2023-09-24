@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.keep-notes__header-section_left .keep-notes__header-navlink {
+  justify-content: flex-start;
+}
+
 .keep-notes__header-section_left img {
   width: 44px;
   padding-right: 0.25rem;
