@@ -8,7 +8,7 @@ import { NavLink as Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import channelPicture from '../../assets/channel-picture.jpg';
 
-import { Tooltip } from '../../components/index.js';
+import { Tooltip, LeftSection } from '../../components/index.js';
 import './header.css';
 
 const iconSize = 20;
@@ -18,15 +18,7 @@ const Header = ( {isHome, pageTitle} ) => {
   
   return (
     <div className='keep-notes__header'>
-      <div className='keep-notes__header-section_left'>
-        <Tooltip text={"Main menu"}>
-          <RiMenuFill size={iconSize}/>
-        </Tooltip>
-        <NavLink className="keep-notes__header-navlink" to="/home">
-          {isHome && <img src={logo} alt="logo"/>}
-          <h3>{pageTitle}</h3>
-        </NavLink>
-      </div>
+      <LeftSection isHome={isHome} pageTitle={pageTitle} iconSize={iconSize}/>
       <div className='keep-notes__header-section_searchbar'>
         <Tooltip text={"Serach"}>
           <RiSearchLine size={iconSize}/>
