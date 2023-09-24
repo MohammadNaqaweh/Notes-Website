@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiMenuFill, RiSearchLine } from 'react-icons/ri';
 import { RxReload, RxGear } from 'react-icons/rx';
 import { BsViewStacked, BsGrid3X3GapFill } from 'react-icons/bs';
+import { HiOutlineSquares2X2 } from 'react-icons/hi2'
 import { NavLink as Link, NavLink } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 import channelPicture from '../../assets/channel-picture.jpg';
 
 import { Tooltip } from '../../components/index.js';
-
 import './header.css';
 
 const iconSize = 20;
 
 const Header = ( {isHome, pageTitle} ) => {
+  const [ isGrid, setIsGrid ] = useState(false);
+  
   return (
     <div className='keep-notes__header'>
       <div className='keep-notes__header-section_left'>
@@ -38,9 +40,10 @@ const Header = ( {isHome, pageTitle} ) => {
         <Tooltip text={"Refresh"}>
           <RxReload size={iconSize} />
         </Tooltip>
-        <Tooltip text={"List View"}>
-          <BsViewStacked size={iconSize} />
-        </Tooltip>
+        {isGrid
+        ? <Tooltip text={"Grid View"}><HiOutlineSquares2X2 size={iconSize} onClick={() => setIsGrid(false) }/></Tooltip>
+        : <Tooltip text={"List View"}><BsViewStacked size={iconSize} onClick={() => setIsGrid(true) }/></Tooltip> 
+        }
         <Tooltip text={"Settings"}>
           <RxGear size={iconSize} />
         </Tooltip>
