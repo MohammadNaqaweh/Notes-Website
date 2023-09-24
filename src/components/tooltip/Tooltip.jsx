@@ -3,7 +3,7 @@ import './tooltip.css';
 import '../../containers/header/header.css'
 
 
-const Tooltip = ( {text, children} ) => {
+const Tooltip = ( {text, children, customClassName= ''} ) => {
   const [isVisible, setIsVisible] = useState(false)
   
   return (
@@ -13,7 +13,7 @@ const Tooltip = ( {text, children} ) => {
       onMouseLeave={() => setIsVisible(false)}
     >
       {children}
-      {isVisible && <div className='keep-notes__tooltip-text'>{text}</div>}
+      {isVisible && <p className={`keep-notes__tooltip-text ${customClassName}`}>{text}</p>}
     </div>
   )
 }
