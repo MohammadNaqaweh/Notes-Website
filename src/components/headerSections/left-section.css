@@ -1,4 +1,4 @@
-.keep-notes__header-section_left {
+.keep-notes__header-left_section {
   flex: 1;
   display: flex;
   align-items: center;
@@ -7,17 +7,17 @@
   width: 100%;
 }
 
-.keep-notes__header-section_left .keep-notes__header-navlink {
+.keep-notes__header-left_section .keep-notes__header-navlink {
   justify-content: flex-start;
 }
 
-.keep-notes__header-section_left img {
+.keep-notes__header-left_section img {
   width: 44px;
   padding-right: 0.25rem;
   cursor: pointer;
 }
 
-.keep-notes__header-section_left h3 {
+.keep-notes__header-left_section h3 {
   font-size: 22px;
   line-height: 24px;
   color: var(--color-text);

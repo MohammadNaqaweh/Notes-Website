@@ -10,7 +10,7 @@ import './left-section.css';
 
 const LeftSection = ({ iconSize, isHome, pageTitle }) => {
   return (
-    <div className='keep-notes__header-section_left'>
+    <div className='keep-notes__header-left_section'>
       <Tooltip text={"Main menu"}>
         <RiMenuFill size={iconSize}/>
       </Tooltip>
