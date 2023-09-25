@@ -4,11 +4,12 @@ import { RxReload, RxGear } from 'react-icons/rx';
 import { BsViewStacked, BsGrid3X3GapFill } from 'react-icons/bs';
 import { HiOutlineSquares2X2 } from 'react-icons/hi2'
 
-import { Tooltip } from '../index.js';
-import './middle-section.css'
+import { Tooltip, SettingsMenu } from '../index.js';
+import './middle-section.css';
 
 const MiddleSection = ({ iconSize }) => {
   const [ listView, setListView ] = useState();
+  const [ toggleSettingsMenu, setToggleSettingsMenu ]= useState(false);
 
   useEffect(() => {
     setListView(JSON.parse(localStorage.getItem("KEEP_NOTES_List_VIEW")) || true)
@@ -40,8 +41,9 @@ const MiddleSection = ({ iconSize }) => {
         : <Tooltip text={"List View"}><BsViewStacked size={iconSize} onClick={() => setListView(true) }/></Tooltip> 
         }
         <Tooltip text={"Settings"}>
-          <RxGear size={iconSize} />
+          <RxGear size={iconSize} onClick={() => setToggleSettingsMenu(!toggleSettingsMenu)}/>
         </Tooltip>
+        {toggleSettingsMenu && <SettingsMenu />}
       </div>
     </div>
   )

@@ -1,0 +1,22 @@
+.keep-notes__settings-menu {
+  background-color: var(--color-bg);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  padding: 6px 0;
+}
+
+.keep-notes__settings-menu p {
+  color: var(--color-text);
+  padding: 5px 10px 5px 17px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 20px;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.keep-notes__settings-menu p:hover {
+  background-color: #444547;
+}
+
