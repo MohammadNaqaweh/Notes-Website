@@ -84,7 +84,7 @@
   }
 
   .keep-notes__header-middle_section-icons_container .keep-notes__tooltip:first-child {
-    display: unset;
+    display: flex;
   }
 
 }
