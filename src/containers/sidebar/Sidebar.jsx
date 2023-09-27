@@ -6,14 +6,10 @@ import { PiArchiveBox, PiTrash } from 'react-icons/pi';
 import './sidebar.css';
 
 const Sidebar = () => {
-  const [ isHover, setIsHover] = useState(false);
-  
   const iconSize = 24;
   
   return (
-    <div className='keep-notes__sidebar' 
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}>
+    <div className='keep-notes__sidebar'>
       <div className='keep-notes__sidebar-buttons_container'>
         <div className='keep-notes__sidebar-button'>
           <div className='keep-notes__sidebar-button_icon'> <LiaLightbulb size={iconSize} /></div>
