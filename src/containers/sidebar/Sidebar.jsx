@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LiaLightbulb } from 'react-icons/lia';
 import { AiOutlineBell } from 'react-icons/ai';
 import { GoPencil } from 'react-icons/go';
 import { PiArchiveBox, PiTrash } from 'react-icons/pi';
+import { SidebarButton } from '../../components/index.js'
 import './sidebar.css';
 
 const Sidebar = () => {
+  const [activeIndex, setActiveIndex ] = useState(0);
+  const [ hover, setHover ] = useState(false);
+  useEffect(()=>{console.log(activeIndex)},[activeIndex]);
+  
   const iconSize = 24;
 
   const btnData = [
@@ -32,17 +37,23 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className='keep-notes__sidebar'>
+    <div className={`keep-notes__sidebar ${hover && "keep-notes__sidebar_hover"}`}
+      onMouseEnter={() => {setHover(true)}} 
+      onMouseLeave={() => {setHover(false)}}>
       <div className='keep-notes__sidebar-buttons_container'>
         {btnData.map((item,index)=>(
-          <div className='keep-notes__sidebar-button'>
-            <div className='keep-notes__sidebar-button_icon'>{item.icon}</div>
-            <p>{item.text}</p>
-          </div>
+          <SidebarButton
+            text={item.text}
+            icon={item.icon}
+            isActive={index === activeIndex}
+            sidevarHover={hover}
+            key={index}
+            onClick={() => {setActiveIndex(index)}}
+          />
         ))}
       </div>
       <div className='keep-notes__sidebar-footer'>
-        <a href='https://keep.google.com/' target='_blank'>Open-source licenses</a>
+        {hover && <a href='https://keep.google.com/' target='_blank'>Open-source licenses</a>}
       </div>
     </div>
   )
