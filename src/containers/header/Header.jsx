@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { LeftSection, MiddleSection, RightSection } from '../../components/index.js';
 import { useIsTop } from '../../hooks/useIsTop.js'
 import './header.css';
