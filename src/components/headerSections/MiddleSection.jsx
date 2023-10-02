@@ -8,11 +8,11 @@ import { Tooltip, SettingsMenu } from '../index.js';
 import './middle-section.css';
 
 const MiddleSection = ({ iconSize }) => {
-  const [ listView, setListView ] = useState();
+  const [ listView, setListView ] = useState(true);
   const [ toggleSettingsMenu, setToggleSettingsMenu ]= useState(false);
 
   useEffect(() => {
-    setListView(JSON.parse(localStorage.getItem("KEEP_NOTES_List_VIEW")) || true)
+    setListView(JSON.parse(localStorage.getItem("KEEP_NOTES_List_VIEW")))
   }, [])
 
   useEffect(() => {
